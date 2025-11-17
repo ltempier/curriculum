@@ -1,0 +1,173 @@
+{
+    "info": {
+        "name": "Laurent Tempier",
+        "birthdate": "1989-07-02",
+        "title": "Développeur Full Stack",
+        "email": "laurent.tempier@gmail.com",
+        "phone": "+33627923026",
+        "location": "Saint Jacques d'Ambur - 63230",
+        "github": "https://github.com/ltempier",
+        "summary": "Développeur passionné combinant 10+ ans d’expérience en full-stack (JS/TS, Node.js, React) et une forte expertise hardware/embarqué (C++, IoT, impression 3D, énergie solaire)."
+    },
+    "experience": [
+        {
+            "title": "Micro-entrepreneur | Impression 3D & Modélisation",
+            "company": "v45e",
+            "location": "Saint-Jacques-d'Ambur",
+            "dates": [
+                "2024-10-01",
+                "now"
+            ],
+            "tasks": [
+                "Création d’une ferme d’impression 3D 100 % autonome : énergie solaire et automatisation",
+                "Développement d’une app de modélisation loft avec impression en un clic app.v45e.com"
+            ]
+        },
+        {
+            "title": "Création d'un éco-lieu autonome",
+            "company": null,
+            "location": "Saint-Jacques-d'Ambur",
+            "dates": [
+                "2020-01-01",
+                "now"
+            ],
+            "tasks": [
+                "Auto-construction d'une maison",
+                "Conception et mise en service d’un système d’autonomie énergétique totale",
+                "Installation d’un système complet d’autonomie en eau",
+                "Création et optimisation d’un potager en permaculture"
+            ]
+        },
+        {
+            "title": "Tour du Monde en 693 jours",
+            "company": null,
+            "location": "*",
+            "dates": [
+                "2017-06-02",
+                "2019-04-25"
+            ],
+            "tasks": [
+                "Voyage à travers 20+ pays sur 4 continents."
+            ]
+        },
+        {
+            "title": "Développeur Full Stack",
+            "company": "MOMA",
+            "location": "Paris",
+            "dates": [
+                "2013-12-02",
+                "2017-05-05"
+            ],
+            "tasks": [
+                "Création de la plateforme e6-group, une solution de trading d’énergie renouvelable sur différents marchés, permettant aux producteurs de maximiser leurs revenus et d'optimiser leurs stratégies de vente.",
+                "Développement d'un outil GEIDE pour l'optimisation des arrêts de tranches dans les centrales nucléaires EDF.",
+                "Maintenance et missions diverses pour Voltalis."
+            ]
+        },
+        {
+            "title": "Apprenti Ingénieur Génie Industriel",
+            "company": "Melox",
+            "location": "Chusclan",
+            "dates": [
+                "2009-09-07",
+                "2012-09-13"
+            ],
+            "tasks": [
+                "Mise en place d'outils pour la maintenance prédictive sur des équipements industriels.",
+                "Modélisation 3D des systèmes de production pour simulation 3D.",
+                "Amélioration et pérennisation des outils de production pour garantir leur durabilité et performance."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Master Spécialisé en Informatique",
+            "school": "INSA Lyon",
+            "dates": [
+                "2012-10-01",
+                "2013-10-01"
+            ]
+        },
+        {
+            "degree": "Ingénieur Génie Industriel",
+            "school": "EICNAM",
+            "dates": [
+                "2009-09-01",
+                "2012-09-01"
+            ]
+        },
+        {
+            "degree": "DUT Génie Mécanique et Productique",
+            "school": "IUT Nîmes",
+            "dates": [
+                "2007-09-01",
+                "2009-09-01"
+            ]
+        }
+    ],
+    "skills": [
+        {
+            "name": "JavaScript / TypeScript",
+            "level": "Avancé"
+        },
+        {
+            "name": "Node.js",
+            "level": "Avancé"
+        },
+        {
+            "name": "C/C++",
+            "level": "Avancé"
+        },
+        {
+            "name": "Python",
+            "level": "Avancé"
+        },
+        {
+            "name": "Docker / Docker Compose",
+            "level": "Avancé"
+        },
+        {
+            "name": "Kubernetes",
+            "level": "Intermédiaire"
+        },
+        {
+            "name": "PostgreSQL",
+            "level": "Avancé"
+        },
+        {
+            "name": "MongoDB",
+            "level": "Avancé"
+        },
+        {
+            "name": "InfluxDB",
+            "level": "Avancé"
+        },
+        {
+            "name": "Linux / Bash",
+            "level": "Avancé"
+        },
+        {
+            "name": "DAO (Solidworks / FreeCAD)",
+            "level": "Avancé"
+        },
+        {
+            "name": "Klipper / FDM",
+            "level": "Avancé"
+        },
+        {
+            "name": "KiCad / conception PCB",
+            "level": "Intermédiaire"
+        }
+    ],
+    "languages": {
+        "Français": "Natif",
+        "Anglais": "C1"
+    },
+    "hobbies": [
+        "Radio-astronomie et télescopes",
+        "Microcontrôleurs et systèmes embarqués",
+        "Radiofréquence (LoRa, SDR, wifi)",
+        "Impression 3D",
+        "Nature et Agriculture"
+    ]
+}
