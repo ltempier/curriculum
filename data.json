@@ -19,8 +19,8 @@
                 "now"
             ],
             "tasks": [
-                "Création d’une ferme d’impression 3D 100 % autonome : énergie solaire et automatisation",
-                "Développement d’une app de modélisation loft avec impression en un clic app.v45e.com"
+                "Création d’une ferme d’impression 3D 100 % autonome : énergie solaire et automatisation.",
+                "Développement d’une app de modélisation loft avec impression en un clic app.v45e.com."
             ]
         },
         {
@@ -32,10 +32,10 @@
                 "now"
             ],
             "tasks": [
-                "Auto-construction d'une maison",
-                "Conception et mise en service d’un système d’autonomie énergétique totale",
-                "Installation d’un système complet d’autonomie en eau",
-                "Création et optimisation d’un potager en permaculture"
+                "Auto-construction d'une maison.",
+                "Conception, mise en service et monitoring d’un système d’autonomie énergétique totale.",
+                "Installation d’un système complet d’autonomie en eau.",
+                "Création et optimisation d’un potager en permaculture."
             ]
         },
         {
@@ -165,7 +165,7 @@
     },
     "hobbies": [
         "Radio-astronomie et télescopes",
-        "Microcontrôleurs et systèmes embarqués",
+        "Microcontrôleurs et systèmes embarqués (ESP32, RPI, Arduino)",
         "Radiofréquence (LoRa, SDR, wifi)",
         "Impression 3D",
         "Nature et Agriculture"
