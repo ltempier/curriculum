@@ -19,25 +19,26 @@
         }
 
         @media print {
+
+            html,
             body {
-                background: white;
-                color: black;
+                zoom: 75%;
+                overflow: hidden;
             }
 
-            .bg-zinc-900,
-            .bg-black,
-            .border-zinc-800 {
-                background: white !important;
-                border-color: #333 !important;
-            }
-
-            .text-gray-400,
-            .text-gray-500 {
-                color: #444 !important;
+            *,
+            *::before,
+            *::after {
+                box-shadow: none !important;
             }
 
             .no-print {
-                display: none;
+                display: none !important;
+            }
+
+            body {
+                background: white !important;
+                color: black !important;
             }
         }
     </style>
@@ -45,173 +46,178 @@
 
 <body class="min-h-screen bg-black text-gray-300">
 
-    <div class="max-w-6xl mx-auto bg-zinc-950 border border-zinc-800 shadow-2xl">
+    <div
+        class="max-w-6xl mx-auto bg-zinc-950 border-zinc-800 shadow-2xl border">
 
         <!-- Header -->
-        <header class="bg-black border-b border-zinc-800 px-10 py-14">
+        <header
+            class="bg-black border-b border-zinc-800 px-10 py-14">
             <div class="flex flex-col lg:flex-row justify-between gap-10">
                 <div class="max-w-3xl">
                     <h1 class="text-5xl lg:text-6xl font-bold text-white tracking-tight">
                         Laurent Tempier
                     </h1>
-                    <p class="text-2xl mt-3 text-gray-400 font-medium">Développeur Full Stack & Maker</p>
-                    <p class="mt-6 text-lg leading-relaxed text-gray-300">
+                    <p class="text-2xl mt-3 text-gray-300 font-medium">Développeur Full Stack & Maker</p>
+                    <p class="mt-6 text-lg leading-relaxed text-gray-200">
                         Développeur passionné combinant 10+ ans d’expérience en full-stack (JS/TS, Node.js, React) et une forte expertise hardware/embarqué (C++, IoT, impression 3D, énergie solaire).
                     </p>
                 </div>
 
-                <div class="space-y-4 text-lg">
-                    <div class="flex items-center gap-4">
-                        <i class="fas fa-phone w-5 text-gray-500"></i>
-                        <span>
-                            +33627923026
-                        </span>
+                <div class="space-y-4 text-lg text-gray-200">
+                    <div class="flex items-center gap-4"><i class="fas fa-phone w-5"></i>
+                        +33627923026
                     </div>
-                    <div class="flex items-center gap-4">
-                        <i class="fas fa-envelope w-5 text-gray-500"></i>
-                        <a href="mailto:laurent.tempier@gmail.com" class="hover:text-white transition underline">
+                    <div class="flex items-center gap-4"><i class="fas fa-envelope w-5"></i> <a
+                            href="mailto:laurent.tempier@gmail.com" class="hover:underline">
                             laurent.tempier@gmail.com
-                        </a>
+                        </a></div>
+                    <div class="flex items-center gap-4"><i class="fas fa-map-marker-alt w-5"></i>
+                        Saint Jacques d&#39;Ambur - 63230
                     </div>
-                    <div class="flex items-center gap-4">
-                        <i class="fas fa-map-marker-alt w-5 text-gray-500"></i>
-                        <span>
-                            Saint Jacques d&#39;Ambur - 63230
-                        </span>
-                    </div>
-                    <div class="flex items-center gap-4">
-                        <i class="fab fa-github w-5 text-gray-500"></i>
-                        <a href="https://github.com/ltempier" target="_blank" class="hover:text-white transition underline">
-                            github.com/ltempier
-                        </a>
-                    </div>
+                    <div class="flex items-center gap-4"><i class="fab fa-github w-5"></i> <a href="https://github.com/ltempier"
+                            target="_blank" class="hover:underline">github.com/ltempier</a></div>
                 </div>
             </div>
         </header>
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 p-10">
 
-            <!-- === COLONNE GAUCHE : 3 blocs séparés === -->
+            <!-- COLONNE GAUCHE -->
             <aside class="space-y-8">
 
-                <!-- Bloc Compétences -->
-                <section class="bg-zinc-900/70 border border-zinc-800 rounded-xl p-8">
-                    <h2 class="text-2xl font-bold text-white pb-3 border-b border-zinc-700">Compétences</h2>
+                <section
+                    class="bg-zinc-900/70 border-zinc-800 border rounded-xl p-8">
+                    <h2
+                        class="text-2xl font-bold text-white pb-3 border-b border-zinc-700">
+                        Compétences</h2>
                     <div class="mt-6 space-y-4">
                         
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     JavaScript / TypeScript
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     Node.js
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     C/C++
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     Python
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     Docker / Docker Compose
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     Kubernetes
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Intermédiaire
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     PostgreSQL
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     MongoDB
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     InfluxDB
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     Linux / Bash
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     DAO (Solidworks / FreeCAD)
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     Klipper / FDM
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Avancé
                                 </span>
                             </div>
                             
                             <div class="flex justify-between items-center">
-                                <span class="font-medium">
+                                <span class="font-medium ">
                                     KiCad / conception PCB
                                 </span>
-                                <span class="text-sm font-bold text-gray-400">
+                                <span
+                                    class="text-sm font-bold text-gray-400">
                                     Intermédiaire
                                 </span>
                             </div>
@@ -219,25 +225,29 @@
                     </div>
                 </section>
 
-                <!-- Bloc Langues -->
-                <section class="bg-zinc-900/70 border border-zinc-800 rounded-xl p-8">
-                    <h2 class="text-2xl font-bold text-white pb-3 border-b border-zinc-700">Langues</h2>
+                <section
+                    class="bg-zinc-900/70 border-zinc-800 border rounded-xl p-8">
+                    <h2
+                        class="text-2xl font-bold text-white pb-3 border-b border-zinc-700">
+                        Langues</h2>
                     <div class="mt-6 space-y-4">
                         
                             <div class="flex justify-between">
-                                <span>
+                                <span class="">
                                     Français
                                 </span>
-                                <span class="font-semibold text-gray-400">
+                                <span
+                                    class="font-semibold text-gray-400">
                                     Natif
                                 </span>
                             </div>
                             
                             <div class="flex justify-between">
-                                <span>
+                                <span class="">
                                     Anglais
                                 </span>
-                                <span class="font-semibold text-gray-400">
+                                <span
+                                    class="font-semibold text-gray-400">
                                     C1
                                 </span>
                             </div>
@@ -245,33 +255,35 @@
                     </div>
                 </section>
 
-                <!-- Bloc Centres d’intérêt -->
-                <section class="bg-zinc-900/70 border border-zinc-800 rounded-xl p-8">
-                    <h2 class="text-2xl font-bold text-white pb-3 border-b border-zinc-700">Centres d’intérêt</h2>
+                <section
+                    class="bg-zinc-900/70 border-zinc-800 border rounded-xl p-8">
+                    <h2
+                        class="text-2xl font-bold text-white pb-3 border-b border-zinc-700">
+                        Centres d’intérêt</h2>
                     <div class="mt-6 flex flex-wrap gap-2">
                         
                             <span
-                                class="bg-zinc-800 text-gray-300 border border-zinc-700 px-4 py-2 rounded-xl text-sm font-medium">
+                                class="bg-zinc-800 text-gray-300 border-zinc-700 border px-4 py-2 rounded-xl text-sm font-medium">
                                 Radio-astronomie et télescopes
                             </span>
                             
                             <span
-                                class="bg-zinc-800 text-gray-300 border border-zinc-700 px-4 py-2 rounded-xl text-sm font-medium">
+                                class="bg-zinc-800 text-gray-300 border-zinc-700 border px-4 py-2 rounded-xl text-sm font-medium">
                                 Microcontrôleurs et systèmes embarqués
                             </span>
                             
                             <span
-                                class="bg-zinc-800 text-gray-300 border border-zinc-700 px-4 py-2 rounded-xl text-sm font-medium">
+                                class="bg-zinc-800 text-gray-300 border-zinc-700 border px-4 py-2 rounded-xl text-sm font-medium">
                                 Radiofréquence (LoRa, SDR, wifi)
                             </span>
                             
                             <span
-                                class="bg-zinc-800 text-gray-300 border border-zinc-700 px-4 py-2 rounded-xl text-sm font-medium">
+                                class="bg-zinc-800 text-gray-300 border-zinc-700 border px-4 py-2 rounded-xl text-sm font-medium">
                                 Impression 3D
                             </span>
                             
                             <span
-                                class="bg-zinc-800 text-gray-300 border border-zinc-700 px-4 py-2 rounded-xl text-sm font-medium">
+                                class="bg-zinc-800 text-gray-300 border-zinc-700 border px-4 py-2 rounded-xl text-sm font-medium">
                                 Nature et Agriculture
                             </span>
                             
@@ -280,47 +292,46 @@
 
             </aside>
 
-            <!-- === COLONNE PRINCIPALE === -->
+            <!-- COLONNE DROITE -->
             <main class="lg:col-span-2 space-y-16 pt-6">
 
-                <!-- Expériences -->
                 <section>
-                    <h2 class="text-3xl font-bold text-white pb-4 border-b-2 border-zinc-700">Expériences</h2>
+                    <h2
+                        class="text-3xl font-bold text-white pb-4 border-b-2 border-zinc-700">
+                        Expériences</h2>
                     
                         
-                            <div class="mt-12 pl-8 border-l-2 border-zinc-700">
-                                <!-- Ligne titre + date toujours alignée horizontalement -->
+                            <div
+                                class="mt-12 pl-8 border-l-2 border-zinc-700">
                                 <div class="flex items-start justify-between gap-6 -mb-1">
                                     <div class="flex-1 min-w-0">
-                                        <!-- min-w-0 = autorise le texte à se couper proprement si trop long -->
-                                        <h3 class="text-xl font-bold text-white leading-tight pr-4">
+                                        <h3
+                                            class="text-xl font-bold text-white leading-tight pr-4">
                                             Micro-entrepreneur | Impression 3D &amp; Modélisation
                                                 
-                                                    <span class="font-normal text-gray-500">– v45e</span>
+                                                    <span
+                                                        class="font-normal text-gray-500">–
+                                                        v45e</span>
                                                     
                                         </h3>
-
                                         
-                                            <p class="text-gray-500 text-sm mt-1">
+                                            <p
+                                                class="text-sm mt-1 text-gray-500">
                                                 <i class="fas fa-map-marker-alt mr-1"></i>
                                                 Saint-Jacques-d&#39;Ambur
                                             </p>
                                             
                                     </div>
-
-                                    <!-- La date est complètement isolée à droite et ne bouge jamais -->
-                                    <div class="shrink-0 text-sm text-gray-500 font-medium whitespace-nowrap">
+                                    <div
+                                        class="shrink-0 text-sm font-medium text-gray-500 whitespace-nowrap">
                                         oct. 2024 → Aujourd’hui
                                     </div>
                                 </div>
-
-                                <!-- Les tâches -->
-                                <ul class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
-                                    
-                                        <li>
+                                <ul
+                                    class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
+                                    <li>
                                             Création d’une ferme d’impression 3D 100 % autonome : énergie solaire et automatisation
                                         </li>
-                                        
                                         <li>
                                             Développement d’une app de modélisation loft avec impression en un clic app.v45e.com
                                         </li>
@@ -329,45 +340,39 @@
                             </div>
                             
                         
-                            <div class="mt-12 pl-8 border-l-2 border-zinc-700">
-                                <!-- Ligne titre + date toujours alignée horizontalement -->
+                            <div
+                                class="mt-12 pl-8 border-l-2 border-zinc-700">
                                 <div class="flex items-start justify-between gap-6 -mb-1">
                                     <div class="flex-1 min-w-0">
-                                        <!-- min-w-0 = autorise le texte à se couper proprement si trop long -->
-                                        <h3 class="text-xl font-bold text-white leading-tight pr-4">
+                                        <h3
+                                            class="text-xl font-bold text-white leading-tight pr-4">
                                             Création d&#39;un éco-lieu autonome
                                                 
                                         </h3>
-
                                         
-                                            <p class="text-gray-500 text-sm mt-1">
+                                            <p
+                                                class="text-sm mt-1 text-gray-500">
                                                 <i class="fas fa-map-marker-alt mr-1"></i>
                                                 Saint-Jacques-d&#39;Ambur
                                             </p>
                                             
                                     </div>
-
-                                    <!-- La date est complètement isolée à droite et ne bouge jamais -->
-                                    <div class="shrink-0 text-sm text-gray-500 font-medium whitespace-nowrap">
+                                    <div
+                                        class="shrink-0 text-sm font-medium text-gray-500 whitespace-nowrap">
                                         janv. 2020 → Aujourd’hui
                                     </div>
                                 </div>
-
-                                <!-- Les tâches -->
-                                <ul class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
-                                    
-                                        <li>
+                                <ul
+                                    class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
+                                    <li>
                                             Auto-construction d&#39;une maison
                                         </li>
-                                        
                                         <li>
                                             Conception et mise en service d’un système d’autonomie énergétique totale
                                         </li>
-                                        
                                         <li>
                                             Installation d’un système complet d’autonomie en eau
                                         </li>
-                                        
                                         <li>
                                             Création et optimisation d’un potager en permaculture
                                         </li>
@@ -376,29 +381,25 @@
                             </div>
                             
                         
-                            <div class="mt-12 pl-8 border-l-2 border-zinc-700">
-                                <!-- Ligne titre + date toujours alignée horizontalement -->
+                            <div
+                                class="mt-12 pl-8 border-l-2 border-zinc-700">
                                 <div class="flex items-start justify-between gap-6 -mb-1">
                                     <div class="flex-1 min-w-0">
-                                        <!-- min-w-0 = autorise le texte à se couper proprement si trop long -->
-                                        <h3 class="text-xl font-bold text-white leading-tight pr-4">
+                                        <h3
+                                            class="text-xl font-bold text-white leading-tight pr-4">
                                             Tour du Monde en 693 jours
                                                 
                                         </h3>
-
                                         
                                     </div>
-
-                                    <!-- La date est complètement isolée à droite et ne bouge jamais -->
-                                    <div class="shrink-0 text-sm text-gray-500 font-medium whitespace-nowrap">
+                                    <div
+                                        class="shrink-0 text-sm font-medium text-gray-500 whitespace-nowrap">
                                         juin 2017 → avr. 2019
                                     </div>
                                 </div>
-
-                                <!-- Les tâches -->
-                                <ul class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
-                                    
-                                        <li>
+                                <ul
+                                    class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
+                                    <li>
                                             Voyage à travers 20+ pays sur 4 continents.
                                         </li>
                                         
@@ -406,43 +407,40 @@
                             </div>
                             
                         
-                            <div class="mt-12 pl-8 border-l-2 border-zinc-700">
-                                <!-- Ligne titre + date toujours alignée horizontalement -->
+                            <div
+                                class="mt-12 pl-8 border-l-2 border-zinc-700">
                                 <div class="flex items-start justify-between gap-6 -mb-1">
                                     <div class="flex-1 min-w-0">
-                                        <!-- min-w-0 = autorise le texte à se couper proprement si trop long -->
-                                        <h3 class="text-xl font-bold text-white leading-tight pr-4">
+                                        <h3
+                                            class="text-xl font-bold text-white leading-tight pr-4">
                                             Développeur Full Stack
                                                 
-                                                    <span class="font-normal text-gray-500">– MOMA</span>
+                                                    <span
+                                                        class="font-normal text-gray-500">–
+                                                        MOMA</span>
                                                     
                                         </h3>
-
                                         
-                                            <p class="text-gray-500 text-sm mt-1">
+                                            <p
+                                                class="text-sm mt-1 text-gray-500">
                                                 <i class="fas fa-map-marker-alt mr-1"></i>
                                                 Paris
                                             </p>
                                             
                                     </div>
-
-                                    <!-- La date est complètement isolée à droite et ne bouge jamais -->
-                                    <div class="shrink-0 text-sm text-gray-500 font-medium whitespace-nowrap">
+                                    <div
+                                        class="shrink-0 text-sm font-medium text-gray-500 whitespace-nowrap">
                                         déc. 2013 → mai 2017
                                     </div>
                                 </div>
-
-                                <!-- Les tâches -->
-                                <ul class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
-                                    
-                                        <li>
+                                <ul
+                                    class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
+                                    <li>
                                             Création de la plateforme e6-group, une solution de trading d’énergie renouvelable sur différents marchés, permettant aux producteurs de maximiser leurs revenus et d&#39;optimiser leurs stratégies de vente.
                                         </li>
-                                        
                                         <li>
                                             Développement d&#39;un outil GEIDE pour l&#39;optimisation des arrêts de tranches dans les centrales nucléaires EDF.
                                         </li>
-                                        
                                         <li>
                                             Maintenance et missions diverses pour Voltalis.
                                         </li>
@@ -451,43 +449,40 @@
                             </div>
                             
                         
-                            <div class="mt-12 pl-8 border-l-2 border-zinc-700">
-                                <!-- Ligne titre + date toujours alignée horizontalement -->
+                            <div
+                                class="mt-12 pl-8 border-l-2 border-zinc-700">
                                 <div class="flex items-start justify-between gap-6 -mb-1">
                                     <div class="flex-1 min-w-0">
-                                        <!-- min-w-0 = autorise le texte à se couper proprement si trop long -->
-                                        <h3 class="text-xl font-bold text-white leading-tight pr-4">
+                                        <h3
+                                            class="text-xl font-bold text-white leading-tight pr-4">
                                             Apprenti Ingénieur Génie Industriel
                                                 
-                                                    <span class="font-normal text-gray-500">– Melox</span>
+                                                    <span
+                                                        class="font-normal text-gray-500">–
+                                                        Melox</span>
                                                     
                                         </h3>
-
                                         
-                                            <p class="text-gray-500 text-sm mt-1">
+                                            <p
+                                                class="text-sm mt-1 text-gray-500">
                                                 <i class="fas fa-map-marker-alt mr-1"></i>
                                                 Chusclan
                                             </p>
                                             
                                     </div>
-
-                                    <!-- La date est complètement isolée à droite et ne bouge jamais -->
-                                    <div class="shrink-0 text-sm text-gray-500 font-medium whitespace-nowrap">
+                                    <div
+                                        class="shrink-0 text-sm font-medium text-gray-500 whitespace-nowrap">
                                         sept. 2009 → sept. 2012
                                     </div>
                                 </div>
-
-                                <!-- Les tâches -->
-                                <ul class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
-                                    
-                                        <li>
+                                <ul
+                                    class="mt-4 space-y-2 text-gray-400 list-disc list-inside">
+                                    <li>
                                             Mise en place d&#39;outils pour la maintenance prédictive sur des équipements industriels.
                                         </li>
-                                        
                                         <li>
                                             Modélisation 3D des systèmes de production pour simulation 3D.
                                         </li>
-                                        
                                         <li>
                                             Amélioration et pérennisation des outils de production pour garantir leur durabilité et performance.
                                         </li>
@@ -497,11 +492,13 @@
                             
                 </section>
 
-                <!-- Formation -->
                 <section>
-                    <h2 class="text-3xl font-bold text-white pb-4 border-b-2 border-zinc-700">Formation</h2>
+                    <h2
+                        class="text-3xl font-bold text-white pb-4 border-b-2 border-zinc-700">
+                        Formation</h2>
                     
-                        <div class="mt-10 pl-8 border-l-2 border-zinc-700">
+                        <div
+                            class="mt-10 pl-8 border-l-2 border-zinc-700">
                             <h3 class="text-xl font-semibold text-white">
                                 Master Spécialisé en Informatique
                             </h3>
@@ -513,7 +510,8 @@
                             </p>
                         </div>
                         
-                        <div class="mt-10 pl-8 border-l-2 border-zinc-700">
+                        <div
+                            class="mt-10 pl-8 border-l-2 border-zinc-700">
                             <h3 class="text-xl font-semibold text-white">
                                 Ingénieur Génie Industriel
                             </h3>
@@ -525,7 +523,8 @@
                             </p>
                         </div>
                         
-                        <div class="mt-10 pl-8 border-l-2 border-zinc-700">
+                        <div
+                            class="mt-10 pl-8 border-l-2 border-zinc-700">
                             <h3 class="text-xl font-semibold text-white">
                                 DUT Génie Mécanique et Productique
                             </h3>
