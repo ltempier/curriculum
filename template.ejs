@@ -13,11 +13,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
+
         body {
             font-family: 'Inter', system-ui, sans-serif;
-            background-color: <%=theme==='light' ? '#ffffff': '#000000' %>;
-            color: <%=theme==='light' ? '#1f2937': '#e5e7eb' %>;
+            background-color: <%= theme === 'light' ? '#ffffff' : '#000000' %>;
+            color: <%= theme === 'light' ? '#1f2937' : '#e5e7eb' %>;
         }
+
+        a {
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: <%= theme === 'light' ? '#000000' : '#ffffff' %>;
+        }
+
+
 
         @media print {
 
@@ -184,7 +197,7 @@
                                 <ul
                                     class="mt-4 space-y-2 <%= theme === 'light' ? 'text-gray-700' : 'text-gray-400' %> list-disc list-inside">
                                     <% exp.tasks.forEach(task=> { %><li>
-                                            <%= task %>
+                                            <%- task %>
                                         </li>
                                         <% }) %>
                                 </ul>
