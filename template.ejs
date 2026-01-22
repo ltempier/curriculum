@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="fr" class="<%= theme === 'light' ? '' : 'dark' %>">
+<html lang="<%= lang === 'EN' ? 'en' : 'fr' %>" class="<%= theme === 'light' ? '' : 'dark' %>">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="CV Laurent Tempier - Développeur Full Stack">
-    <title>
-        <%= info.name %> - CV
-    </title>
+    <title><%= info.name %> - CV</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 
         body {
             font-family: 'Inter', system-ui, sans-serif;
@@ -30,10 +27,7 @@
             color: <%= theme === 'light' ? '#000000' : '#ffffff' %>;
         }
 
-
-
         @media print {
-
             html,
             body {
                 zoom: 75%;
@@ -60,36 +54,50 @@
 
 <body class="min-h-screen <%= theme === 'light' ? 'bg-white text-gray-900' : 'bg-black text-gray-300' %>">
 
-    <div
-        class="max-w-6xl mx-auto <%= theme === 'light' ? 'bg-white border-gray-200 shadow-md' : 'bg-zinc-950 border-zinc-800 shadow-2xl' %> border">
+    <!-- Lang switch -->
+    <div class="max-w-6xl mx-auto px-10 py-4 flex justify-end space-x-4 text-sm font-medium">
+        <a href="index.html"
+            class="<%= lang === 'FR' ? 'font-bold underline' : (theme === 'light' ? 'text-gray-700 hover:text-gray-900' : 'text-gray-400 hover:text-white') %>">
+            FR
+        </a>
+        <a href="en.html"
+            class="<%= lang === 'EN' ? 'font-bold underline' : (theme === 'light' ? 'text-gray-700 hover:text-gray-900' : 'text-gray-400 hover:text-white') %>">
+            EN
+        </a>
+    </div>
+
+    <!-- Traductions des titres -->
+    <%
+    const titles = {
+        competencies: lang === 'EN' ? 'Skills' : 'Compétences',
+        languages: lang === 'EN' ? 'Languages' : 'Langues',
+        hobbies: lang === 'EN' ? 'Hobbies' : 'Centres d’intérêt',
+        experiences: lang === 'EN' ? 'Experience' : 'Expériences',
+        education: lang === 'EN' ? 'Education' : 'Formation',
+        developer: lang === 'EN' ? 'Full Stack Developer & Maker' : 'Développeur Full Stack & Maker',
+        pdf: lang === 'EN' ? 'PDF Version' : 'Version PDF'
+    };
+    %>
+
+    <div class="max-w-6xl mx-auto <%= theme === 'light' ? 'bg-white border-gray-200 shadow-md' : 'bg-zinc-950 border-zinc-800 shadow-2xl' %> border mb-10">
 
         <!-- Header -->
-        <header
-            class="<%= theme === 'light' ? 'bg-gray-900 text-white' : 'bg-black border-b border-zinc-800' %> px-10 py-14">
+        <header class="<%= theme === 'light' ? 'bg-gray-900 text-white' : 'bg-black border-b border-zinc-800' %> px-10 py-14">
             <div class="flex flex-col lg:flex-row justify-between gap-10">
                 <div class="max-w-3xl">
-                    <h1 class="text-5xl lg:text-6xl font-bold text-white tracking-tight">
-                        <%= info.name %>
-                    </h1>
-                    <p class="text-2xl mt-3 text-gray-300 font-medium">Développeur Full Stack & Maker</p>
-                    <p class="mt-6 text-lg leading-relaxed text-gray-200">
-                        <%= info.summary %>
-                    </p>
+                    <h1 class="text-5xl lg:text-6xl font-bold text-white tracking-tight"><%= info.name %></h1>
+                    <p class="text-2xl mt-3 text-gray-300 font-medium"><%= titles.developer %></p>
+                    <p class="mt-6 text-lg leading-relaxed text-gray-200"><%= info.summary %></p>
                 </div>
-
                 <div class="space-y-4 text-lg text-gray-200">
-                    <div class="flex items-center gap-4"><i class="fas fa-phone w-5"></i>
-                        <%= info.phone %>
+                    <div class="flex items-center gap-4"><i class="fas fa-phone w-5"></i> <%= info.phone %></div>
+                    <div class="flex items-center gap-4"><i class="fas fa-envelope w-5"></i> 
+                        <a href="mailto:<%= info.email %>" class="hover:underline"><%= info.email %></a>
                     </div>
-                    <div class="flex items-center gap-4"><i class="fas fa-envelope w-5"></i> <a
-                            href="mailto:<%= info.email %>" class="hover:underline">
-                            <%= info.email %>
-                        </a></div>
-                    <div class="flex items-center gap-4"><i class="fas fa-map-marker-alt w-5"></i>
-                        <%= info.location %>
+                    <div class="flex items-center gap-4"><i class="fas fa-map-marker-alt w-5"></i> <%= info.location %></div>
+                    <div class="flex items-center gap-4"><i class="fab fa-github w-5"></i> 
+                        <a href="<%= info.github %>" target="_blank" class="hover:underline">github.com/ltempier</a>
                     </div>
-                    <div class="flex items-center gap-4"><i class="fab fa-github w-5"></i> <a href="<%= info.github %>"
-                            target="_blank" class="hover:underline">github.com/ltempier</a></div>
                 </div>
             </div>
         </header>
@@ -99,58 +107,44 @@
             <!-- COLONNE GAUCHE -->
             <aside class="space-y-8">
 
-                <section
-                    class="<%= theme === 'light' ? 'bg-gray-50 border-gray-200' : 'bg-zinc-900/70 border-zinc-800' %> border rounded-xl p-8">
-                    <h2
-                        class="text-2xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-3 border-b <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
-                        Compétences</h2>
+                <section class="<%= theme === 'light' ? 'bg-gray-50 border-gray-200' : 'bg-zinc-900/70 border-zinc-800' %> border rounded-xl p-8">
+                    <h2 class="text-2xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-3 border-b <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
+                        <%= titles.competencies %>
+                    </h2>
                     <div class="mt-6 space-y-4">
-                        <% skills.forEach(skill=> { %>
-                            <div class="flex justify-between items-center">
-                                <span class="font-medium <%= theme === 'light' ? 'text-gray-800' : '' %>">
-                                    <%= skill.name %>
-                                </span>
-                                <span
-                                    class="text-sm font-bold <%= theme === 'light' ? 'text-gray-600' : 'text-gray-400' %>">
-                                    <%= skill.level %>
-                                </span>
-                            </div>
-                            <% }) %>
+                        <% skills.forEach(skill => { %>
+                        <div class="flex justify-between items-center">
+                            <span class="font-medium <%= theme === 'light' ? 'text-gray-800' : '' %>"><%= skill.name %></span>
+                            <span class="text-sm font-bold <%= theme === 'light' ? 'text-gray-600' : 'text-gray-400' %>"><%= skill.level %></span>
+                        </div>
+                        <% }) %>
                     </div>
                 </section>
 
-                <section
-                    class="<%= theme === 'light' ? 'bg-gray-50 border-gray-200' : 'bg-zinc-900/70 border-zinc-800' %> border rounded-xl p-8">
-                    <h2
-                        class="text-2xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-3 border-b <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
-                        Langues</h2>
+                <section class="<%= theme === 'light' ? 'bg-gray-50 border-gray-200' : 'bg-zinc-900/70 border-zinc-800' %> border rounded-xl p-8">
+                    <h2 class="text-2xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-3 border-b <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
+                        <%= titles.languages %>
+                    </h2>
                     <div class="mt-6 space-y-4">
-                        <% Object.keys(languages).forEach(lang=> { %>
-                            <div class="flex justify-between">
-                                <span class="<%= theme === 'light' ? 'text-gray-800' : '' %>">
-                                    <%= lang %>
-                                </span>
-                                <span
-                                    class="font-semibold <%= theme === 'light' ? 'text-gray-700' : 'text-gray-400' %>">
-                                    <%= languages[lang] %>
-                                </span>
-                            </div>
-                            <% }) %>
+                        <% Object.keys(languages).forEach(langKey => { %>
+                        <div class="flex justify-between">
+                            <span class="<%= theme === 'light' ? 'text-gray-800' : '' %>"><%= langKey %></span>
+                            <span class="font-semibold <%= theme === 'light' ? 'text-gray-700' : 'text-gray-400' %>"><%= languages[langKey] %></span>
+                        </div>
+                        <% }) %>
                     </div>
                 </section>
 
-                <section
-                    class="<%= theme === 'light' ? 'bg-gray-50 border-gray-200' : 'bg-zinc-900/70 border-zinc-800' %> border rounded-xl p-8">
-                    <h2
-                        class="text-2xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-3 border-b <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
-                        Centres d’intérêt</h2>
+                <section class="<%= theme === 'light' ? 'bg-gray-50 border-gray-200' : 'bg-zinc-900/70 border-zinc-800' %> border rounded-xl p-8">
+                    <h2 class="text-2xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-3 border-b <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
+                        <%= titles.hobbies %>
+                    </h2>
                     <div class="mt-6 flex flex-wrap gap-2">
-                        <% hobbies.forEach(hobby=> { %>
-                            <span
-                                class="<%= theme === 'light' ? 'bg-gray-200 text-gray-800 border-gray-300' : 'bg-zinc-800 text-gray-300 border-zinc-700' %> border px-4 py-2 rounded-xl text-sm font-medium">
-                                <%= hobby %>
-                            </span>
-                            <% }) %>
+                        <% hobbies.forEach(hobby => { %>
+                        <span class="<%= theme === 'light' ? 'bg-gray-200 text-gray-800 border-gray-300' : 'bg-zinc-800 text-gray-300 border-zinc-700' %> border px-4 py-2 rounded-xl text-sm font-medium">
+                            <%= hobby %>
+                        </span>
+                        <% }) %>
                     </div>
                 </section>
 
@@ -160,84 +154,75 @@
             <main class="lg:col-span-2 space-y-16 pt-6">
 
                 <section>
-                    <h2
-                        class="text-3xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-4 border-b-2 <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
-                        Expériences</h2>
-                    <% experience.forEach(exp=> { %>
-                        <% const start=new Date(exp.dates[0]); const end=exp.dates[1]==='now' ? 'Aujourd’hui' : new
-                            Date(exp.dates[1]); const formatDate=d=> d === 'Aujourd’hui' ? d :
-                            d.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' }); %>
-                            <div
-                                class="mt-12 pl-8 <%= theme === 'light' ? 'border-l-2 border-gray-400' : 'border-l-2 border-zinc-700' %>">
-                                <div class="flex items-start justify-between gap-6 -mb-1">
-                                    <div class="flex-1 min-w-0">
-                                        <h3
-                                            class="text-xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> leading-tight pr-4">
-                                            <%= exp.title %>
-                                                <% if (exp.company) { %>
-                                                    <span
-                                                        class="font-normal <%= theme === 'light' ? 'text-gray-600' : 'text-gray-500' %>">–
-                                                        <%= exp.company %>
-                                                    </span>
-                                                    <% } %>
-                                        </h3>
-                                        <% if (exp.location && exp.location !=='*' ) { %>
-                                            <p
-                                                class="text-sm mt-1 <%= theme === 'light' ? 'text-gray-600' : 'text-gray-500' %>">
-                                                <i class="fas fa-map-marker-alt mr-1"></i>
-                                                <%= exp.location %>
-                                            </p>
-                                            <% } %>
-                                    </div>
-                                    <div
-                                        class="shrink-0 text-sm font-medium <%= theme === 'light' ? 'text-gray-600' : 'text-gray-500' %> whitespace-nowrap">
-                                        <%= formatDate(start) %> → <%= formatDate(end) %>
-                                    </div>
-                                </div>
-                                <ul
-                                    class="mt-4 space-y-2 <%= theme === 'light' ? 'text-gray-700' : 'text-gray-400' %> list-disc list-inside">
-                                    <% exp.tasks.forEach(task=> { %><li>
-                                            <%- task %>
-                                        </li>
-                                        <% }) %>
-                                </ul>
+                    <h2 class="text-3xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-4 border-b-2 <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
+                        <%= titles.experiences %>
+                    </h2>
+                    <% experience.forEach(exp => {
+                        const start = new Date(exp.dates[0]);
+                        const end = exp.dates[1] === 'now' ? (lang === 'EN' ? 'Today' : 'Aujourd’hui') : new Date(exp.dates[1]);
+                        const formatDate = d => {
+                            if (d === 'Aujourd’hui' || d === 'Today') return d;
+                            return d.toLocaleDateString(lang === 'EN' ? 'en-GB' : 'fr-FR', { month: 'short', year: 'numeric' });
+                        };
+                    %>
+                    <div class="mt-12 pl-8 <%= theme === 'light' ? 'border-l-2 border-gray-400' : 'border-l-2 border-zinc-700' %>">
+                        <div class="flex items-start justify-between gap-6 -mb-1">
+                            <div class="flex-1 min-w-0">
+                                <h3 class="text-xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> leading-tight pr-4">
+                                    <%= exp.title %>
+                                    <% if (exp.company) { %>
+                                    <span class="font-normal <%= theme === 'light' ? 'text-gray-600' : 'text-gray-500' %>">– <%= exp.company %></span>
+                                    <% } %>
+                                </h3>
+                                <% if (exp.location && exp.location !== '*') { %>
+                                <p class="text-sm mt-1 <%= theme === 'light' ? 'text-gray-600' : 'text-gray-500' %>">
+                                    <i class="fas fa-map-marker-alt mr-1"></i>
+                                    <%= exp.location %>
+                                </p>
+                                <% } %>
                             </div>
+                            <div class="shrink-0 text-sm font-medium <%= theme === 'light' ? 'text-gray-600' : 'text-gray-500' %> whitespace-nowrap">
+                                <%= formatDate(start) %> → <%= formatDate(end) %>
+                            </div>
+                        </div>
+                        <ul class="mt-4 space-y-2 <%= theme === 'light' ? 'text-gray-700' : 'text-gray-400' %> list-disc list-inside">
+                            <% exp.tasks.forEach(task => { %>
+                            <li><%- task %></li>
                             <% }) %>
+                        </ul>
+                    </div>
+                    <% }) %>
                 </section>
 
                 <section>
-                    <h2
-                        class="text-3xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-4 border-b-2 <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
-                        Formation</h2>
-                    <% education.forEach(edu=> { %>
-                        <div
-                            class="mt-10 pl-8 <%= theme === 'light' ? 'border-l-2 border-gray-400' : 'border-l-2 border-zinc-700' %>">
-                            <h3 class="text-xl font-semibold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %>">
-                                <%= edu.degree %>
-                            </h3>
-                            <p class="<%= theme === 'light' ? 'text-gray-700' : 'text-gray-400' %> font-medium mt-1">
-                                <%= edu.school %>
-                            </p>
-                            <p class="text-sm <%= theme === 'light' ? 'text-gray-600' : 'text-gray-500' %>">
-                                <%= new Date(edu.dates[0]).getFullYear() %> – <%= new Date(edu.dates[1]).getFullYear()
-                                        %>
-                            </p>
-                        </div>
-                        <% }) %>
+                    <h2 class="text-3xl font-bold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %> pb-4 border-b-2 <%= theme === 'light' ? 'border-gray-300' : 'border-zinc-700' %>">
+                        <%= titles.education %>
+                    </h2>
+                    <% education.forEach(edu => { %>
+                    <div class="mt-10 pl-8 <%= theme === 'light' ? 'border-l-2 border-gray-400' : 'border-l-2 border-zinc-700' %>">
+                        <h3 class="text-xl font-semibold <%= theme === 'light' ? 'text-gray-900' : 'text-white' %>"><%= edu.degree %></h3>
+                        <p class="<%= theme === 'light' ? 'text-gray-700' : 'text-gray-400' %> font-medium mt-1"><%= edu.school %></p>
+                        <p class="text-sm <%= theme === 'light' ? 'text-gray-600' : 'text-gray-500' %>">
+                            <%= new Date(edu.dates[0]).getFullYear() %> – <%= new Date(edu.dates[1]).getFullYear() %>
+                        </p>
+                    </div>
+                    <% }) %>
                 </section>
 
             </main>
         </div>
     </div>
 
+    <% if (pdf && pdf.href && pdf.name) { %>
     <div class="fixed bottom-6 right-6 z-50 no-print">
-        <a href="./pdf/cv_white.pdf" download="CV_Laurent_Tempier.pdf"
+        <a href="<%= pdf.href %>" target="_blank"
             class="inline-flex items-center gap-3 rounded-full bg-green-600 px-6 py-4 text-white font-semibold shadow-2xl transition-all hover:bg-green-700 hover:scale-105 active:scale-95">
             <i class="fas fa-file-download text-xl"></i>
-            <span class="hidden sm:inline">Version PDF</span>
+            <span class="hidden sm:inline"><%= titles.pdf %></span>
             <span class="sm:hidden">PDF</span>
         </a>
     </div>
+    <% } %>
 
 </body>
 
